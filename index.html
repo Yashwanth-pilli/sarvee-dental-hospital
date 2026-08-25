@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvee Dental Hospital | Premium Dental Care in Amalapuram</title>
+    <meta name="description" content="Premium dental care for healthier teeth and brighter smiles. Meet Dr. Y. Chandramouli and Dr. Y. Poojitha at Konkapalli, Amalapuram. Book your appointment today.">
+    <!-- Google Fonts: Poppins for modern, premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Futuristic Glowing Smile & Heart Intro Overlay -->
+    <div id="intro-overlay" class="intro-overlay-panel">
+        <div id="intro-stage" class="intro-stage-container">
+            <!-- SVG Container for the smile & heart animations -->
+            <svg class="intro-svg" viewBox="0 0 100 100" fill="none" stroke-linecap="round">
+                <!-- Smile Path 1 (Left to center) -->
+                <path class="intro-smile-path path-left" d="M 10,45 Q 40,85 55,45" stroke="#26D7D9" stroke-width="2" />
+                <!-- Smile Path 2 (Right to center) -->
+                <path class="intro-smile-path path-right" d="M 90,45 Q 60,85 45,45" stroke="#26D7D9" stroke-width="2" />
+                <!-- Heart Path (Center) -->
+                <path class="intro-heart-path" d="M 50,42 C 46,32 32,34 32,46 C 32,56 44,66 50,74 C 56,66 68,56 68,46 C 68,34 54,32 50,42 Z" stroke="#26D7D9" stroke-width="2" />
+            </svg>
+            
+            <!-- Tagline Text (Fades in) -->
+            <div class="intro-tagline" id="intro-tagline-element">
+                “Smile nicely. <br class="mobile-break">We’ll handle the shiny part.”
+            </div>
+            
+            <!-- Final Logo (Fades in in the center) -->
+            <img src="Pics/logo.jpg" alt="Sarvee Dental Hospital Logo" class="intro-final-logo" id="intro-logo-element">
+        </div>
+        
+        <!-- Skip Intro Button -->
+        <button id="skip-intro-btn" class="skip-intro-button" type="button">Skip Intro</button>
+    </div>
+
+    <!-- ==========================================
+         1. STICKY HEADER
+         ========================================== -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#hero" class="logo-area">
+                <!-- CLINIC OWNER: You can change the main logo path here if you update the logo file -->
+                <img src="Pics/logo.jpg" alt="Sarvee Dental Hospital Logo" class="header-logo">
+                <span class="logo-text">Sarvee <span class="logo-highlight">Dental Hospital</span></span>
+            </a>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="navigation-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#doctors" class="nav-link">Doctors</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#smiles" class="nav-link">Smiles</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#appointment" class="nav-link">Book Now</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==========================================
+             2. HERO SECTION (3D Animated Feel)
+             ========================================== -->
+        <section id="hero" class="hero-section">
+            <!-- Background Canvas for floating 3D-feel particles -->
+            <canvas id="hero-particles" class="hero-canvas"></canvas>
+            
+            <div class="hero-container">
+                <!-- Center Glassy Panel & Logo -->
+                <div class="hero-logo-panel reveal">
+                    <div class="rotating-ring"></div>
+                    <div class="logo-glow-effect"></div>
+                    <div class="glass-circle">
+                        <!-- CLINIC OWNER: Main logo path -->
+                        <img src="Pics/logo.jpg" alt="Sarvee Dental Hospital Tooth Logo" class="center-logo">
+                    </div>
+                </div>
+
+                <!-- Text Overlay -->
+                <div class="hero-content reveal">
+                    <h1 class="hero-title">Sarvee Dental Hospital</h1>
+                    <!-- CLINIC OWNER: Clinic Tagline -->
+                    <p class="hero-tagline">“Smile nicely. We’ll handle the shiny part.”</p>
+                    <p class="hero-subtext">Modern dental care for healthier teeth, brighter smiles, and more confident days.</p>
+                    
+                    <!-- Call to Action Buttons -->
+                    <div class="hero-actions">
+                        <a href="#appointment" class="btn btn-primary">Book Appointment</a>
+                        <!-- CLINIC OWNER: WhatsApp link number below (format: phone=918688046036) -->
+                        <a href="https://wa.me/918688046036?text=Hi%20Sarvee%20Dental%20Hospital,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="btn btn-secondary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24zm6.29-4.314c1.66.986 3.28 1.503 4.933 1.505 5.524 0 10.018-4.494 10.022-10.02.002-2.677-1.041-5.193-2.937-7.09C16.47 2.185 13.963 1.14 11.299 1.14c-5.525 0-10.022 4.494-10.026 10.02-.001 1.747.459 3.45 1.332 4.973l-1.002 3.66 3.754-.985zm13.488-8.265c-.3-.15-1.771-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.777.975-.951 1.174-.176.2-.351.224-.652.074-3.002-1.5-4.343-2.475-6.077-5.454-.176-.3-.176-.517-.026-.666.134-.134.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525c-.075-.15-.677-1.632-.927-2.235-.24-.58-.485-.502-.676-.512-.174-.008-.374-.01-.573-.01-.2 0-.526.075-.801.374-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.224 5.112 4.524.714.31 1.27.494 1.703.633.717.227 1.37.195 1.887.118.575-.085 1.771-.724 2.022-1.424.25-.7.25-1.3 1.75-1.425.075-.025.15-.15.075-.3z"/>
+                            </svg>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                    
+                    <!-- CLINIC OWNER: Phone number displayed beneath CTAs -->
+                    <p class="hero-emergency-line">Call or WhatsApp <a href="tel:8688046036" class="emergency-link">86880 46036</a> for appointments and emergencies.</p>
+                </div>
+            </div>
+            
+            <!-- Floating Scroll Indicator -->
+            <div class="scroll-indicator">
+                <a href="#about" aria-label="Scroll to About Clinic">
+                    <span class="mouse">
+                        <span class="wheel"></span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             3. ABOUT CLINIC
+             ========================================== -->
+        <section id="about" class="about-section scroll-section">
+            <div class="section-container">
+                <div class="grid-2-col">
+                    <!-- Left: Content & Badges -->
+                    <div class="about-content reveal-left">
+                        <span class="section-badge">Welcome to Excellence</span>
+                        <h2 class="section-title">About Sarvee Dental Hospital</h2>
+                        <div class="title-underline"></div>
+                        <p class="about-description">
+                            Located in the heart of Konkapalli, Amalapuram, Sarvee Dental Hospital is a premier dental healthcare facility dedicated to providing clean, modern, and patient-first care. We combine advanced diagnostic tools with personalized treatment plans to ensure you receive the highest standard of dental therapy in a relaxing and sterile environment.
+                        </p>
+                        <p class="about-description">
+                            Whether you need simple preventive teeth maintenance or advanced cosmetic and implant procedures, our specialists are dedicated to your comfort and absolute satisfaction.
+                        </p>
+                        
+                        <!-- CLINIC OWNER: Info badges displayed here -->
+                        <div class="pill-chips-container">
+                            <span class="pill-chip">
+                                <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                                Konkapalli, Amalapuram
+                            </span>
+                            <span class="pill-chip">
+                                <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                9 AM – 7 PM
+                            </span>
+                            <span class="pill-chip highlight-chip">
+                                <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                Emergency Care Available
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Clinic Interior Card -->
+                    <div class="about-image-wrapper reveal-right">
+                        <div class="glass-image-card">
+                            <!-- CLINIC OWNER: Main interior image file path -->
+                            <img src="Pics/clinic-main.jpg" alt="Sarvee Dental Hospital Modern Dental Chair Interior" class="about-img main-lightbox-trigger">
+                            <div class="image-card-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             4. SERVICES (Treatments & Services)
+             ========================================== -->
+        <section id="services" class="services-section scroll-section">
+            <div class="section-container">
+                <div class="section-header text-center reveal">
+                    <span class="section-badge">Our Expertise</span>
+                    <h2 class="section-title">Treatments & Services</h2>
+                    <div class="title-underline center"></div>
+                    <p class="section-subtitle">From smile design to implants and fixed teeth, every treatment is planned with care and precision.</p>
+                </div>
+
+                <!-- CLINIC OWNER: You can edit or add new service cards in this grid -->
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card reveal-up">
+                        <div class="service-icon-box">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                        </div>
+                        <h3 class="service-card-title">Smile Design</h3>
+                        <p class="service-card-desc">Advanced aesthetic procedures to reshape and brighten your teeth for a perfect, natural smile.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card reveal-up" style="animation-delay: 0.1s;">
+                        <div class="service-icon-box">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 class="service-card-title">Dental Implants</h3>
+                        <p class="service-card-desc">State-of-the-art permanent root replacements to securely mount natural-looking fixed teeth.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card reveal-up" style="animation-delay: 0.2s;">
+                        <div class="service-icon-box">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="service-card-title">Dentures</h3>
+                        <p class="service-card-desc">Premium quality complete and partial removable dentures designed for optimal comfort and function.</p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card reveal-up">
+                        <div class="service-icon-box">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                        </div>
+                        <h3 class="service-card-title">Teeth Cleaning & Polishing</h3>
+                        <p class="service-card-desc">Professional scaling and stain removal to keep your gums healthy and your teeth shiny white.</p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-card reveal-up" style="animation-delay: 0.1s;">
+                        <div class="service-icon-box">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3 class="service-card-title">Fillings & Restorations</h3>
+                        <p class="service-card-desc">Biocompatible, tooth-colored materials to repair cavities and restore damaged teeth seamlessly.</p>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="service-card reveal-up" style="animation-delay: 0.2s;">
+                        <div class="service-icon-box">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                        </div>
+                        <h3 class="service-card-title">Fixed Teeth / Crowns & Bridges</h3>
+                        <p class="service-card-desc">Durable zirconia and ceramic crowns to protect teeth and bridges to fill gaps permanently.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             5. MEET THE DOCTORS
+             ========================================== -->
+        <section id="doctors" class="doctors-section scroll-section">
+            <div class="section-container">
+                <div class="section-header text-center reveal">
+                    <span class="section-badge">Our Specialists</span>
+                    <h2 class="section-title">Meet the Doctors</h2>
+                    <div class="title-underline center"></div>
+                    <p class="section-subtitle">Dedicated professionals committed to offering gentle, expert, and patient-first care.</p>
+                          <!-- CLINIC OWNER: Doctors list. Cards are text-only with an aqua accent pill at the top -->
+                <div class="doctors-grid">
+                    <!-- Doctor 1 -->
+                    <div class="doctor-card text-card reveal-left">
+                        <div class="doctor-accent-pill"></div>
+                        <div class="doctor-info">
+                            <h3 class="doctor-name">Dr. Y. Chandramouli</h3>
+                            <p class="doctor-spec">MDS – Prosthodontics & Implantology</p>
+                            <p class="doctor-tagline">Implant specialist focused on confident smiles.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- Doctor 2 -->
+                    <div class="doctor-card text-card reveal-right">
+                        <div class="doctor-accent-pill"></div>
+                        <div class="doctor-info">
+                            <h3 class="doctor-name">Dr. Y. Poojitha</h3>
+                            <p class="doctor-spec">BDS – General & Aesthetic Dentistry</p>
+                            <p class="doctor-tagline">Gentle care with an eye for detail.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Centered Joint Doctors Block -->
+                <div class="doctors-joint-block reveal-up" style="margin-top: 60px;">
+                    <div class="joint-image-card">
+                        <img src="Pics/doctors.jpg" alt="Dr. Y. Chandramouli and Dr. Y. Poojitha at Sarvee Dental Hospital" class="joint-doctors-img main-lightbox-trigger">
+                        <div class="joint-image-glow"></div>
+                    </div>
+                    <div class="joint-doctors-content text-center">
+                        <h3 class="joint-title">The team behind the smiles</h3>
+                        <p class="joint-description">
+                            Dr. Y. Chandramouli and Dr. Y. Poojitha run Sarvee Dental Hospital like a family — calm explanations, steady hands, and a shared mission to send patients home smiling a little brighter.
+                        </p>
+                        <p class="joint-fun-line">
+                            One plans the bite. One polishes the shine. Together, they handle the smile.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             6. CLINIC GALLERY
+             ========================================== -->
+        <section id="gallery" class="gallery-section scroll-section">
+            <div class="section-container">
+                <div class="section-header text-center reveal">
+                    <span class="section-badge">Take a Tour</span>
+                    <h2 class="section-title">Inside the Clinic</h2>
+                    <div class="title-underline center"></div>
+                    <p class="section-subtitle">Explore our state-of-the-art diagnostic instruments, comfortable setups, and sterile environment.</p>
+                </div>
+
+                <!-- Gallery Layout -->
+                <div class="gallery-grid">
+                    <!-- Main Large Interior Photo -->
+                    <div class="gallery-item large reveal-left">
+                        <div class="gallery-img-box">
+                            <img src="Pics/clinic-main.jpg" alt="Main Clinic Room with Dental Chairs" class="gallery-img main-lightbox-trigger">
+                            <div class="gallery-overlay">
+                                <span>Main Clinic Room</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Smaller Cupboard Photo -->
+                    <div class="gallery-item small reveal-right">
+                        <div class="gallery-img-box">
+                            <img src="Pics/clinic-storage.jpg" alt="Dental Materials Storage Cupboard" class="gallery-img main-lightbox-trigger">
+                            <div class="gallery-overlay">
+                                <span>Storage & Sterile Materials</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             7. SMILE TRANSFORMATIONS (Before/After Slider)
+             ========================================== -->
+        <section id="smiles" class="smiles-section scroll-section">
+            <div class="section-container">
+                <div class="section-header text-center reveal">
+                    <span class="section-badge">Real Results</span>
+                    <h2 class="section-title">Smile Transformations</h2>
+                    <div class="title-underline center"></div>
+                    <p class="section-subtitle">Planned treatments, natural-looking results.</p>
+                </div>
+
+                <!-- Vertical Before/After Slider -->
+                <div class="slider-wrapper reveal-up">
+                    <div class="before-after-slider-container" id="before-after-slider">
+                        <!-- Before Half (Top portion of the original image, occupying 100% of the canvas) -->
+                        <div class="slider-img before-img">
+                            <img src="Pics/smile-before-after.jpg" alt="Smile transformation before treatment">
+                            <span class="slider-label before-tag">BEFORE TREATMENT</span>
+                        </div>
+                        
+                        <!-- After Half (Bottom portion, revealing from bottom up using clip-path/height) -->
+                        <div class="slider-img after-img" id="after-img-container">
+                            <img src="Pics/smile-before-after.jpg" alt="Smile transformation after treatment">
+                            <span class="slider-label after-tag">AFTER TREATMENT</span>
+                        </div>
+                        
+                        <!-- Drag Line Divider -->
+                        <div class="slider-bar" id="slider-bar">
+                            <div class="slider-button">
+                                <svg class="slider-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <!-- Vertical double arrow -->
+                                    <polyline points="8 9 12 5 16 9"></polyline>
+                                    <polyline points="8 15 12 19 16 15"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="slider-disclaimer">Drag the slider handle vertically to compare the smile transformation. <br><span>Images shown are for illustration; individual results vary.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             8. TESTIMONIALS / TRUST
+             ========================================== -->
+        <section id="testimonials" class="testimonials-section scroll-section">
+            <div class="section-container">
+                <div class="section-header text-center reveal">
+                    <h2 class="section-title">What Our Patients Say</h2>
+                    <div class="title-underline center"></div>
+                    <button class="section-badge interactive-badge" id="reviews-filter-btn" type="button" style="margin-top: 24px; margin-bottom: 0;">Patient Stories</button>
+                </div>
+
+                <!-- Trust Chips Section -->
+                <div class="trust-container reveal-up">
+                    <p class="trust-title">Why Patients Trust Us</p>
+                    <div class="trust-chips">
+                        <span class="trust-chip">
+                            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Gentle Care
+                        </span>
+                        <span class="trust-chip">
+                            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Modern Equipment
+                        </span>
+                        <span class="trust-chip">
+                            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Patient-First
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             8b. BOOK AN APPOINTMENT
+             ========================================== -->
+        <section id="appointment" class="appointment-section scroll-section">
+            <div class="section-container">
+                <div class="section-header text-center reveal">
+                    <span class="section-badge">Schedule a Visit</span>
+                    <h2 class="section-title">Book an Appointment</h2>
+                    <div class="title-underline center"></div>
+                    <p class="section-subtitle">Fill in the form below, and our team will get back to you shortly to confirm your booking.</p>
+                </div>
+
+                <div class="appointment-form-wrapper reveal-up">
+                    <form id="appointment-form" class="glass-form-card" novalidate>
+                        <!-- CLINIC OWNER FIELDS CUSTOMIZATION:
+                             You can add new fields, change labels, or edit placeholders here.
+                             Make sure to update the script.js fetch logic if you add mandatory fields. -->
+                        <div class="form-grid">
+                            <!-- Full Name (Required) -->
+                            <div class="form-group">
+                                <label for="form-name" class="form-label">Full Name <span class="required-star">*</span></label>
+                                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Yashu Pilli" required>
+                                <span class="error-msg" id="name-error">Please enter your full name.</span>
+                            </div>
+
+                            <!-- Mobile Number (Required) -->
+                            <div class="form-group">
+                                <label for="form-mobile" class="form-label">Mobile Number <span class="required-star">*</span></label>
+                                <input type="tel" id="form-mobile" name="mobile" class="form-input" placeholder="e.g. 8790487399" required>
+                                <span class="error-msg" id="mobile-error">Please enter a valid 10-digit mobile number.</span>
+                            </div>
+
+                            <!-- City / Area -->
+                            <div class="form-group">
+                                <label for="form-city" class="form-label">City / Area</label>
+                                <input type="text" id="form-city" name="city" class="form-input" placeholder="e.g. Amalapuram">
+                            </div>
+
+                            <!-- Preferred Date -->
+                            <div class="form-group">
+                                <label for="form-date" class="form-label">Preferred Date</label>
+                                <input type="date" id="form-date" name="date" class="form-input">
+                            </div>
+
+                            <!-- Preferred Time Slot -->
+                            <div class="form-group">
+                                <label for="form-timeslot" class="form-label">Preferred Time Slot</label>
+                                <select id="form-timeslot" name="timeSlot" class="form-input form-select">
+                                    <option value="" disabled selected>Select a time slot</option>
+                                    <option value="Morning">Morning (9 AM - 12 PM)</option>
+                                    <option value="Afternoon">Afternoon (12 PM - 4 PM)</option>
+                                    <option value="Evening">Evening (4 PM - 7 PM)</option>
+                                </select>
+                            </div>
+
+                            <!-- Reason / Notes -->
+                            <div class="form-group full-width">
+                                <label for="form-notes" class="form-label">Reason / Notes</label>
+                                <textarea id="form-notes" name="notes" class="form-input form-textarea" placeholder="Describe your dental concern or any specific request..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-submit-container">
+                            <button type="submit" class="btn btn-primary btn-large btn-form-submit" id="form-submit-btn">
+                                <span class="btn-text">Submit Appointment Request</span>
+                                <span class="btn-spinner" id="form-spinner"></span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Message (Initially Hidden) -->
+                    <div id="appointment-success" class="glass-success-card" aria-live="polite">
+                        <div class="success-icon-box">
+                            <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <h3>Request Received!</h3>
+                        <p>Thank you! Our team will contact you shortly to confirm your appointment.</p>
+                        <button class="btn btn-secondary" id="reset-form-btn">Book Another Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             9. CONTACT / LOCATION
+             ========================================== -->
+        <section id="contact" class="contact-section scroll-section">
+            <div class="section-container">
+                <div class="grid-2-col">
+                    <!-- Left: Contact Details -->
+                    <div class="contact-info-panel reveal-left">
+                        <span class="section-badge">Get In Touch</span>
+                        <h2 class="section-title">Contact & Location</h2>
+                        <div class="title-underline"></div>
+                        <p class="contact-intro">We are here to answer your questions and help you schedule your dental visit. Reach out to us via call or WhatsApp.</p>
+                        
+                        <div class="contact-details-list">
+                            <!-- Address -->
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div class="contact-text-box">
+                                    <h4>Address</h4>
+                                    <!-- CLINIC OWNER: Clinic address -->
+                                    <p>Konkapalli, Amalapuram, Andhra Pradesh 533201</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <div class="contact-text-box">
+                                    <h4>Call Us</h4>
+                                    <!-- CLINIC OWNER: Phone Link -->
+                                    <p><a href="tel:8688046036" class="contact-link">86880 46036</a></p>
+                                </div>
+                            </div>
+
+                            <!-- WhatsApp -->
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24zm6.29-4.314c1.66.986 3.28 1.503 4.933 1.505 5.524 0 10.018-4.494 10.022-10.02.002-2.677-1.041-5.193-2.937-7.09C16.47 2.185 13.963 1.14 11.299 1.14c-5.525 0-10.022 4.494-10.026 10.02-.001 1.747.459 3.45 1.332 4.973l-1.002 3.66 3.754-.985zm13.488-8.265c-.3-.15-1.771-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.777.975-.951 1.174-.176.2-.351.224-.652.074-3.002-1.5-4.343-2.475-6.077-5.454-.176-.3-.176-.517-.026-.666.134-.134.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525c-.075-.15-.677-1.632-.927-2.235-.24-.58-.485-.502-.676-.512-.174-.008-.374-.01-.573-.01-.2 0-.526.075-.801.374-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.224 5.112 4.524.714.31 1.27.494 1.703.633.717.227 1.37.195 1.887.118.575-.085 1.771-.724 2.022-1.424.25-.7.25-1.3 1.75-1.425.075-.025.15-.15.075-.3z"/></svg>
+                                </div>
+                                <div class="contact-text-box">
+                                    <h4>WhatsApp Us</h4>
+                                    <!-- CLINIC OWNER: WhatsApp Chat Link -->
+                                    <p><a href="https://wa.me/918688046036" target="_blank" class="contact-link">86880 46036</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Timings & Emergency -->
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </div>
+                                <div class="contact-text-box">
+                                    <h4>Timings & Support</h4>
+                                    <!-- CLINIC OWNER: Timings info -->
+                                    <p>9 AM – 7 PM (Mon - Sat)</p>
+                                    <span class="emergency-badge">Emergency Cases Available</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Actions in Contact Panel -->
+                        <div class="contact-actions">
+                            <a href="tel:+918688046036" class="btn btn-primary btn-large">Call Now</a>
+                            <a href="https://wa.me/918688046036?text=Hello%20Sarvee%20Dental%20Hospital,%20I'd%20like%20to%20consult%20a%20doctor." target="_blank" class="btn btn-secondary btn-large">WhatsApp Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Google Maps Embed -->
+                    <div class="contact-map-panel reveal-right">
+                        <div class="glass-map-card">
+                            <!-- 
+                                CLINIC OWNER MAP CUSTOMIZATION:
+                                You can replace the generic Amalapuram coordinates below with your official Google Maps Embed code.
+                                To get your embed code:
+                                1. Search for "Sarvee Dental Hospital Konkapalli Amalapuram" on Google Maps.
+                                2. Click "Share" -> Select "Embed a map" tab.
+                                3. Copy the URL inside the src="..." attribute.
+                                4. Paste that exact URL into the src="..." attribute of the iframe below.
+                            -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15291.954620610332!2d82.00164893774844!3d16.577014605929654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37e199f7d2f9ef%3A0xe103e309cc4c4897!2sAmalapuram%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade" 
+                                title="Sarvee Dental Hospital Location Map">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         10. FOOTER
+         ========================================== -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="footer-logo-link">
+                    <img src="Pics/logo.jpg" alt="Sarvee Dental Hospital Logo" class="footer-logo">
+                    <span class="footer-brand-name">Sarvee Dental Hospital</span>
+                </a>
+                <p class="footer-tagline">“Smile nicely. We’ll handle the shiny part.”</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#doctors">Doctors</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2026</span> Sarvee Dental Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple Lightbox Modal for Gallery Images -->
+    <div id="gallery-lightbox" class="lightbox" aria-hidden="true" role="dialog">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Zoomed view of gallery image">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Funny Testimonials Overlay Modal -->
+    <div id="reviews-filter-modal" class="filter-modal" aria-hidden="true" role="dialog">
+        <div class="filter-modal-content reveal-up">
+            <div class="modal-tooth-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2C9.5 2 7.5 3.5 7.5 6c0 1.3.4 2.5 1 3.5C7.2 11.2 6 13.5 6 16c0 3.5 3 6 6 6s6-2.5 6-6c0-2.5-1.2-4.8-2.5-6.5.6-1 1-2.2 1-3.5 0-2.5-2-4-4.5-4z"/>
+                    <path d="M9 16c.5-1.5 1.5-2.5 3-2.5s2.5 1 3 2.5"/>
+                </svg>
+            </div>
+            <h3 class="filter-modal-title">Uh‑oh… tiny filter problem.</h3>
+            <div class="filter-modal-text">
+                <p>We tried to show only a few reviews.</p>
+                <p>But almost everyone who visited us smiled happily.</p>
+                <p>So our filter got confused and refused to hide anyone.</p>
+            </div>
+            <button class="btn btn-primary" id="filter-modal-close">Okay, keep all smiles</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
